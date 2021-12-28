@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch countdown</title>
+</head>
+<body>
+    <button id="countdown-button">countdown</button>
+    <div id="output-parent">
+
+    </div>
+    
+
+    <script>
+        const outputDiv = document.getElementById('output-parent');
+       
+        const countdownButton = document.getElementById('countdown-button');
+
+        countdownButton.addEventListener("click", function() {
+            for (let i = 10; i >= 0; i--) {
+                if (i == 10) {
+                    outputDiv.appendChild(document.createElement('p')).innerHTML = `${i} Countdown!`;
+                }
+                else if (i == 0) {
+                    outputDiv.appendChild(document.createElement('p')).innerHTML = 'Blastoff!';
+                }
+                else {
+                    outputDiv.appendChild(document.createElement('p')).innerHTML = i;
+                }
+            }
+        });
+
+        
+
+
+
+    </script>
+</body>
+</html>
