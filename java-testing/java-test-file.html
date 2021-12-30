@@ -8,21 +8,53 @@
 </head>
 <body>
     <script>
-// Setup
 
 
 
-function rangeOfNumbers(startNum, endNum) {
-   if (startNum == endNum) {
-      return [endNum];
+const ftoc = function(fahrenheit) {
+    let rawConversion = (fahrenheit - 32) / 1.8;
+    //check if number will be a decimal
+    if (fahrenheit % 1 == 0) {
+      return rawConversion;
       }
+      else {
+        return Math.round(rawConversion * 10) / 10;
+      }
+  };
+  
 
- 
-  return [startNum].concat(rangeOfNumbers(startNum+1, endNum));
-
+const ctof = function(celsius) {
+  let rawConversion = (celsius * 1.8) + 32;
+  if (celsius % 1 == 0) {
+    return rawConversion;
+    }
+    else {
+      return Math.round(rawConversion * 10) / 10;
+    }
 };
 
-console.log(rangeOfNumbers(1, 5))
+function roundToTenth(number) {
+  let numberToArray = number.toString().split('');
+  let preDecimalPlace = Math.floor(number);
+  let postDecimalPlace = numberToArray.slice(numberToArray.indexOf('.'));
+  let roundedDecimal = 0;
+  let output = 0;
+  if (parseInt(postDecimalPlace[2]) >= 5) {
+      roundedDecimal = parseInt(postDecimalPlace[1]) + 1;
+      return parseFloat(preDecimalPlace + '.' + roundedDecimal);
+  }
+  else {
+      roundedDecimal = postDecimalPlace[1];
+      return parseFloat(preDecimalPlace + '.' + roundedDecimal);
+  }
+
+}
+
+
+// Do not edit below this line
+
+
+
     </script>
 </body>
 </html>
