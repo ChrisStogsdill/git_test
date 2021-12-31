@@ -9,6 +9,6 @@ function roundToTenth(number) {
     }
     else {
         roundedDecimal = postDecimalPlace[1];
-        return parseFloat(preDecimalPlace + '.' + roundedDecimal;
+        return parseFloat(preDecimalPlace + '.' + roundedDecimal);
     }
 }
