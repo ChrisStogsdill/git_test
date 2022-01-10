@@ -9,29 +9,22 @@
 <body>
 
     <script>
-    class User {
-
-constructor(name) {
-  // invokes the setter
-  this.name = name;
-}
-
-get name() {
-  return this._name;
-}
-
-set name(value) {
-  if (value.length < 4) {
-    alert("Name is too short.");
-    return;
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
   }
-  this._name = value;
+  // Getter
+  get area() {
+    return this.calcArea();
+  }
+  // Method
+  calcArea() {
+    return this.height * this.width;
+  }
 }
 
-}
-
-let user = new User("John");
-console.log(user.name); // John
+const square = new Rectangle(10, 10);
 
     </script>
     
