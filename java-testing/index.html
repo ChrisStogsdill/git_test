@@ -9,14 +9,29 @@
 <body>
 
     <script>
-        let answer = prompt ('What is the “official” name of JavaScript?' , '');
+    class User {
 
-        if (answer == 'ECMAScript') {
-            alert('that is correct!')
-        }
-        else {
-            alert ('that is not correct. Looking for ECMAScript');
-        }
+constructor(name) {
+  // invokes the setter
+  this.name = name;
+}
+
+get name() {
+  return this._name;
+}
+
+set name(value) {
+  if (value.length < 4) {
+    alert("Name is too short.");
+    return;
+  }
+  this._name = value;
+}
+
+}
+
+let user = new User("John");
+console.log(user.name); // John
 
     </script>
     
